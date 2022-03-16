@@ -10,7 +10,7 @@ module.exports = {
    */
   description: description,
 
-  base: process.env.VUEPRESS_BASE || '/',
+  base: '/' + process.env.VUEPRESS_BASE + '/' || '/',
 
   /**
    * Extra tags to be injected to the page HTML `<head>`
