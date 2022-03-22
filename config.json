@@ -1,14 +1,13 @@
 {
-    "index_name": "Demo",
+    "index_name": "TyperefineryAi",
     "start_urls": [
       {
-        "url":"https://v2.vuepress.vuejs.org/guide",
-        "selectors_key": "guide"
-      },
-      {
-        "url":"https://niswey.aapnainfotech.com/guide",
-        "selectors_key": "guide"
-      } 
+        "url": "https://vuepress.vuejs.org/",
+        "selectors_key": "guide",
+        "tags": [
+          "v1"
+        ]
+      }
     ],
     "sitemap_alternate_links": true,
     "stop_urls": [],
@@ -21,22 +20,19 @@
       "lvl4": ".docs h5",
       "text": ".docs p, .docs li"
     },
-    "faq": {
-      "lvl0": ".faq h1",
-      "lvl1": ".faq h2",
-      "lvl2": ".faq h3",
-      "lvl3": ".faq h4",
-      "lvl4": ".faq h5",
-      "text": ".faq p, .faq li"
-    },
     "guide": {
-      "lvl0": "#introduction",
-      "lvl1": "",
+      "lvl0": ".nav-item",
+      "lvl1": ".sidebar-links",
       "lvl2": ".using-global-selectors",
       "lvl3": ".faq h4",
       "lvl4": ".faq h5",
       "lvl5": ".faq h5",
-      "text": "Guide, Introduction"
+      "text": "Guide, Introduction",
+      "lang": {
+        "selector": "/html/@lang",
+        "type": "xpath",
+        "global": true
+      }
     }
   },
     "strip_chars": " .,;:#",
@@ -46,7 +42,9 @@
         "language",
         "version",
         "type",
-        "docusaurus_tag"
+        "docusaurus_tag",
+        "lang",
+        "tags"
       ],
       "attributesToRetrieve": [
         "hierarchy",
