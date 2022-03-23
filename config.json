@@ -1,58 +1,46 @@
 {
-    "index_name": "TyperefineryAi",
+    "index_name": "typerefinery.ai",
     "start_urls": [
       {
-        "url": "https://vuepress.vuejs.org/",
-        "selectors_key": "guide",
+        "url": "https://sanjayaapna.github.io/demopipe/",
+        "selectors_key": "v1",
         "tags": [
           "v1"
         ]
       }
+      
+    ],
+    "sitemap_urls": [
+     
     ],
     "sitemap_alternate_links": true,
     "stop_urls": [],
     "selectors": {
-    "default": {
-      "lvl0": ".nav-link",
-      "lvl1": ".active sidebar-link",
-      "lvl2": ".docs h3",
-      "lvl3": ".docs h4",
-      "lvl4": ".docs h5",
-      "text": ".docs p, .docs li"
-    },
-    "guide": {
-      "lvl0": ".nav-item",
-      "lvl1": ".sidebar-links",
-      "lvl2": ".using-global-selectors",
-      "lvl3": ".faq h4",
-      "lvl4": ".faq h5",
-      "lvl5": ".faq h5",
-      "text": "Guide, Introduction",
-      "lang": {
-        "selector": "/html/@lang",
-        "type": "xpath",
-        "global": true
+      "v1": {
+        "lvl0": {
+          "selector": ".nav-link",
+          "global": true,
+          "default_value": "Documentation"
+        },
+        "lvl1": ".content__default h1",
+        "lvl2": ".content__default h2",
+        "lvl3": ".content__default h3",
+        "lvl4": ".content__default h4",
+        "lvl5": ".content__default h5",
+        "text": ".content__default p, .content__default li",
+        "lang": {
+          "selector": "/html/@lang",
+          "type": "xpath",
+          "global": true
+        }
       }
-    }
-  },
+    },
+    "scrape_start_urls": false,
     "strip_chars": " .,;:#",
     "custom_settings": {
-      "separatorsToIndex": "_",
       "attributesForFaceting": [
-        "language",
-        "version",
-        "type",
-        "docusaurus_tag",
         "lang",
         "tags"
-      ],
-      "attributesToRetrieve": [
-        "hierarchy",
-        "content",
-        "anchor",
-        "url",
-        "url_without_anchor",
-        "type"
       ]
     },
     "conversation_id": [
