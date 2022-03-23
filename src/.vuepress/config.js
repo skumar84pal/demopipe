@@ -1,80 +1,110 @@
-const { description } = require("../../package");
-require('dotenv').config();
 module.exports = {
-  /**
-   * Ref：https://v1.vuepress.vuejs.org/config/#title
-   */
-  title: "Vuepress Docs Boilerplate",
-  /**
-   * Ref：https://v1.vuepress.vuejs.org/config/#description
-   */
-  description: description,
-
   base: process.env.VUEPRESS_BASE ? '/' + process.env.VUEPRESS_BASE + '/' : '/',
-
-  /**
-   * Extra tags to be injected to the page HTML `<head>`
-   *
-   * ref：https://v1.vuepress.vuejs.org/config/#head
-   */
-  head: [
-    ["meta", { name: "theme-color", content: "#3eaf7c" }],
-    ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
-    [
-      "meta",
-      { name: "apple-mobile-web-app-status-bar-style", content: "black" },
-    ],
-  ],
-
-  /**
-   * Theme configuration, here is the default theme configuration for VuePress.
-   *
-   * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
-   */
-  themeConfig: {
-    repo: "",
-    editLinks: false,
-    docsDir: "",
-    // search:false,
-    editLinkText: "",
-    lastUpdated: false,
-    algolia: {
-      apiKey: '023b1705ec131378a0d17b09a195b1cd',
-      indexName: 'TyperefineryAi',
-      appId: 'HBBT9Y36W4'
-      // If Algolia did not provided you any `appId`, use `BH4D9OD16A` or remove this option
+  locales: {
+    /* This is where you place your general locale config */
+    "/": {
+      lang: "en-US",
+      title: "TypeRefinery Docs",
+      // description: "Innovolve App-Knowledge Graph",
     },
-    nav: [
-      {
-        text: "Guide",
-        link: "/guide/",
-      },
-      {
-        text: "Ankit",
-        link: "/ankit/",
-      },
-      {
-        text: "Config",
-        link: "/config/",
-      },
-      {
-        text: "VuePress",
-        link: "https://v1.vuepress.vuejs.org",
-      },
-    ],
-    sidebar: {
-      "/guide/": [
-        {
-          title: "Guide",
-          collapsable: false,
-          children: ["", "using-vue", "ankit-vue"],
-        },
-      ],
+    "/hi/": {
+      lang: "hi",
+      title: "टाइप रिफाइनरी डॉक्स",
+      // description: "ऐप-ज्ञान ग्राफ को शामिल करें",
     },
   },
-
-  /**
-   * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
-   */
+  themeConfig: {
+   
+    locales: {
+      "/": {
+        label: "English",
+        // algolia: {
+        //   indexName: "typerefinery.ai",
+        //   apiKey: "5792a907c238f1c51eadbc3816abd9a1",
+        //   appId: "2PR5B0W9C6",
+        //   // If Algolia did not provided you any `appId`, use `BH4D9OD16A` or remove this option
+        // },
+        algolia: {
+          indexName: "typerefinery.ai",
+          apiKey: "5792a907c238f1c51eadbc3816abd9a1",
+          appId: "2PR5B0W9C6",
+          algoliaOptions: {
+            facetFilters: ["tags:v1"],
+          },
+        },
+        nav: [
+          {
+            text: "Guide",
+            link: "/guide/",
+          },
+          {
+            text: "Feature",
+            link: "/feature/",
+          },
+          {
+            text: "GitHub",
+            link: "https://github.com/innovolve-ai/typerefinery.ai",
+          },
+        ],
+        sidebar: {
+          "/guide/": [
+            {
+              title: "Guide",
+              collapsable: false,
+              children: ["", "setup-vue", "directory-vue"],
+            },
+          ],
+        },
+      },
+      "/hi/": {
+        // selectText: '选择语言',
+        label: "हिन्दी",
+        // editLinkText: '在 GitHub 上编辑此页',
+        // serviceWorker: {
+        //   updatePopup: {
+        //     message: "发现新内容可用.",
+        //     buttonText: "刷新"
+        //   }
+        // },
+        // algolia: {
+        //   indexName: "typerefinery.ai",
+        //   apiKey: "5792a907c238f1c51eadbc3816abd9a1",
+        //   appId: "2PR5B0W9C6",
+        //   // If Algolia did not provided you any `appId`, use `BH4D9OD16A` or remove this option
+        // },
+        algolia: {
+          indexName: "typerefinery.ai",
+          apiKey: "5792a907c238f1c51eadbc3816abd9a1",
+          appId: "2PR5B0W9C6",
+          algoliaOptions: {
+            facetFilters: ["tags:v1"],
+          },
+        },
+        nav: [
+          {
+            text: "मार्गदर्शक",
+            link: "/hi/guide/",
+          },
+          {
+            text: "विशेषता",
+            link: "/hi/feature/",
+          },
+          {
+            text: "GitHub",
+            link: "https://github.com/innovolve-ai/typerefinery.ai",
+          },
+        ],
+        sidebar: {
+          "/hi/guide/": [
+            {
+              title: "मार्गदर्शक",
+              collapsable: false,
+              children: ["", "setup-vue", "directory-vue"],
+            },
+          ],
+        },
+      },
+    },
+  },
   plugins: ["@vuepress/plugin-back-to-top", "@vuepress/plugin-medium-zoom"],
 };
