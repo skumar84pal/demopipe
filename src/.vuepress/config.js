@@ -1,5 +1,6 @@
 module.exports = {
-  base: process.env.VUEPRESS_BASE ? '/' + process.env.VUEPRESS_BASE + '/' : '/',
+  #base: process.env.VUEPRESS_BASE ? '/' + process.env.VUEPRESS_BASE + '/' : '/',
+  base: '/demopipe/',
   locales: {
     /* This is where you place your general locale config */
     "/": {
