@@ -38,4 +38,4 @@ npm run dev
 ./algolia-crawl.ps1
 ```
 
-<img src="./images/demo.png">
+<img src="./images/demo1.png">
