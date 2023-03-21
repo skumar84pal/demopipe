@@ -1,2 +1,2 @@
-*.png -text
 * text eol=lf
+*.png binary
